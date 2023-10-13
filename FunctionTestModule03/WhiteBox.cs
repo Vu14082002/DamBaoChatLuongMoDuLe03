@@ -1,4 +1,6 @@
-﻿namespace FunctionTestModule03
+﻿using System.Text.RegularExpressions;
+
+namespace FunctionTestModule03
 {
     public class WhiteBox
     {
@@ -106,6 +108,59 @@
         }
 
 
+        public bool IsLeapYear(ushort year)
+        {
+            if (year > 10000 || year < 1000)
+                return false;
+            else
+                if (year % 100 == 0)
+                    if (year % 400 == 0)
+                        return true;
+                    else
+                        return false;
+                else if (year % 4 == 0)
+                    return true;
+            else
+                return false;
+        }
 
+        public bool PasswordCheck(string pass)
+        {
+            if (pass.Length >= 6)
+                if (pass.Length <= 10)
+                    if (Regex.IsMatch(pass, @"\d+"))
+                        return true;
+            return false;
+        }
+
+        public Boolean IsValidDate(short Year, Byte Month, Byte Day)
+        {
+            if (Month >= 1 && Month <= 12)
+                if (Day >= 1)
+                    if (Day <= DaysInMonth((ushort)Year, Month))
+                        return true;
+            return false;
+        }
+
+        public bool EmailCheck(string email)
+        {
+            if (Regex.IsMatch(email, @"\."))
+            {
+                if (Regex.IsMatch(email, @"\.\."))
+                    return false;
+                else
+                    if (Regex.IsMatch(email, @"@"))
+                {
+                    if (Regex.IsMatch(email, @"(@\.|\.@|@@)"))
+                        return false;
+                    else
+                        return true;
+                }
+                else
+                    return false;
+            }
+            else 
+                return false;
+        }
     }
 }
