@@ -162,5 +162,90 @@ namespace FunctionTestModule03
             else 
                 return false;
         }
+
+        public short BodyCheck(short height,Int32 weight)
+        {
+            if (height <= 0)
+                return -1;
+            else
+                if (weight <= 0)
+                    return -1;
+                else
+                    {
+                        float scale = weight * 1000 / (height * height);
+                        if (scale < 18) return 2;
+                        else
+                        {
+                            if (scale > 20) return 1;
+                            else return 0;
+                        }
+                    }
+        }
+
+        public int IsInString (char tmp, string str)
+        {
+            int pos = 32767;
+            for (int i = 0; i < str.Length; i++)
+                if (str[i] == tmp)
+                {
+
+                    pos = i;
+                    break;
+                }
+            return pos;
+        }
+
+        public long HexToDec(string hexaString)
+        {
+            int c;
+            long hexnum, nhex;
+            hexnum = nhex = 0;
+            int i = 0;
+            while (i < hexaString.Length)
+            {
+                c = hexaString[i++];
+                switch (c)
+                {
+                    case '0':
+                    case '1':
+                    case '2':
+                    case '3':
+                    case '4':
+                    case '5':
+                    case '6':
+                    case '7':
+                    case '8':
+                    case '9':
+                        nhex++;
+                        hexnum *= 0x10;
+                        hexnum += (c - '0');
+                        break;
+                    case 'a':
+                    case 'b':
+                    case 'c':
+                    case 'd':
+                    case 'e':
+                    case 'f':
+                        nhex++;
+                        hexnum *= 0x10;
+                        hexnum += (c - 'a' + 0xa);
+                        break;
+                    case 'A':
+                    case 'B':
+                    case 'C':
+                    case 'D':
+                    case 'E':
+                    case 'F':
+                        nhex++;
+                        hexnum *= 0x10;
+                        hexnum += (c - 'A' + 0xA);
+                        break;
+                    default:
+                        break;
+                }
+            }
+            return hexnum;
+        }
+
     }
 }
