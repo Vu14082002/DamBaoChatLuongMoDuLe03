@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\MonHoc\\Nam4_HK1\\DamBaoChatLuongVaKiemThu\\ThucHanh\\FunctionTestModule03\\FunctionTestModule03.csproj": {}
+    "C:\\Code\\CSharp\\DamBaoChatLuongMoDuLe03\\FunctionTestModule03\\FunctionTestModule03.csproj": {}
   },
   "projects": {
-    "D:\\MonHoc\\Nam4_HK1\\DamBaoChatLuongVaKiemThu\\ThucHanh\\FunctionTestModule03\\FunctionTestModule03.csproj": {
+    "C:\\Code\\CSharp\\DamBaoChatLuongMoDuLe03\\FunctionTestModule03\\FunctionTestModule03.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\MonHoc\\Nam4_HK1\\DamBaoChatLuongVaKiemThu\\ThucHanh\\FunctionTestModule03\\FunctionTestModule03.csproj",
+        "projectUniqueName": "C:\\Code\\CSharp\\DamBaoChatLuongMoDuLe03\\FunctionTestModule03\\FunctionTestModule03.csproj",
         "projectName": "FunctionTestModule03",
-        "projectPath": "D:\\MonHoc\\Nam4_HK1\\DamBaoChatLuongVaKiemThu\\ThucHanh\\FunctionTestModule03\\FunctionTestModule03.csproj",
-        "packagesPath": "C:\\Users\\December\\.nuget\\packages\\",
-        "outputPath": "D:\\MonHoc\\Nam4_HK1\\DamBaoChatLuongVaKiemThu\\ThucHanh\\FunctionTestModule03\\obj\\",
+        "projectPath": "C:\\Code\\CSharp\\DamBaoChatLuongMoDuLe03\\FunctionTestModule03\\FunctionTestModule03.csproj",
+        "packagesPath": "C:\\Users\\HaAnhThao\\.nuget\\packages\\",
+        "outputPath": "C:\\Code\\CSharp\\DamBaoChatLuongMoDuLe03\\FunctionTestModule03\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\December\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\HaAnhThao\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
