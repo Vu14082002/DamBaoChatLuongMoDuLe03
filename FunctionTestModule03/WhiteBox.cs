@@ -75,17 +75,17 @@ namespace FunctionTestModule03
 
         public double Average(double Sum, double Count)
         {
-            if (Count == 1) 
-                return Sum; 
-            else if (Count > 0) 
+            if (Count == 1)
+                return Sum;
+            else if (Count > 0)
                 return Sum / Count;
-         else return 0;
+            else return 0;
         }
         public byte DaysInMonth(ushort Year, byte Month)
         {
             if (Month == 1 || Month == 3 || Month == 5 || Month == 7 || Month == 8 || Month == 10 || Month == 12)
             {
-               return 31;
+                return 31;
             }
             else if (Month == 4 || Month == 6 || Month == 9 || Month == 11)
             {
@@ -101,12 +101,83 @@ namespace FunctionTestModule03
                 {
                     return 28;
                 }
-            }else
+            }
+            else
             {
                 return 0;
             }
         }
 
+        public void AlignPic(float w, float h, float ww, float wh, out float x, out float y)
+        {
+            x = 0;
+            y = 0;
+            if (w <= 0 || h <= 0 || ww <= 0 || wh <= 0)
+                throw new Exception();
+            else
+            {
+                if (w > ww)
+                    x = 0;
+                else
+                    x = (ww - w) / 2;
+
+                if (h > wh)
+                    y = 0;
+                else
+                    y = (wh - h) / 2;
+            }
+        }
+
+        public float CalculatePrices(float total, float p1, float p2, float p3)
+        {
+            if (p1 < 0 || p2 < 0 || p3 < 0 || total < 0)
+                throw new Exception();
+            else
+            {
+                if (total <= 100)
+                    return total * p1;
+                else if (total <= 150)
+                    return 100 * p1 + (total - 100) * p2;
+                else
+                    return 100 * p1 + 50 * p2 + (total - 150) * p3;
+            }
+        }
+
+        public bool IsPointInRectangle(float x1, float y1, float x2, float y2, float x, float y)
+        {
+            if (x1 > x2 || y1 > y2)
+                throw new Exception();
+            else
+            {
+                if (x < x1 || x > x2)
+                    return false;
+                else if (y < y1 || y > y2)
+                    return false;
+                else return true;
+
+            }
+        }
+
+        public void CreateIcon(float w, float h, out float s, out float x, out float y)
+        {
+            if (w < 0 || h < 0)
+                throw new Exception();
+            else
+            {
+                if (w > h)
+                {
+                    x = (w - h) / 2;
+                    y = 0;
+                    s = h;
+                }
+                else
+                {
+                    x = 0;
+                    y = (h - w) / 2;
+                    s = w;
+                }
+            }
+        }
 
         public bool IsLeapYear(ushort year)
         {
@@ -114,12 +185,12 @@ namespace FunctionTestModule03
                 return false;
             else
                 if (year % 100 == 0)
-                    if (year % 400 == 0)
-                        return true;
-                    else
-                        return false;
-                else if (year % 4 == 0)
+                if (year % 400 == 0)
                     return true;
+                else
+                    return false;
+            else if (year % 4 == 0)
+                return true;
             else
                 return false;
         }
@@ -159,30 +230,30 @@ namespace FunctionTestModule03
                 else
                     return false;
             }
-            else 
+            else
                 return false;
         }
 
-        public short BodyCheck(short height,Int32 weight)
+        public short BodyCheck(short height, Int32 weight)
         {
             if (height <= 0)
                 return -1;
             else
                 if (weight <= 0)
-                    return -1;
+                return -1;
+            else
+            {
+                float scale = weight * 1000 / (height * height);
+                if (scale < 18) return 2;
                 else
-                    {
-                        float scale = weight * 1000 / (height * height);
-                        if (scale < 18) return 2;
-                        else
-                        {
-                            if (scale > 20) return 1;
-                            else return 0;
-                        }
-                    }
+                {
+                    if (scale > 20) return 1;
+                    else return 0;
+                }
+            }
         }
 
-        public int IsInString (char tmp, string str)
+        public int IsInString(char tmp, string str)
         {
             int pos = 32767;
             for (int i = 0; i < str.Length; i++)
