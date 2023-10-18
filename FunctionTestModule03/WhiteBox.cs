@@ -4,6 +4,31 @@ namespace FunctionTestModule03
 {
     public class WhiteBox
     {
+
+        public int getPositionOf2Cir(int firstRadius, int secRadius, int distance)
+        {
+            if (distance == 0)
+            {
+                if (firstRadius == secRadius)
+                {
+                    return 0;
+                }
+                else if (firstRadius < secRadius)
+                {
+                    return 1;
+                }
+                else
+                {
+                    return 2;
+                }
+            }
+            if (distance > 0)
+            {
+                return 3;
+            }
+            return -1;
+        }
+
         public string Triangle(int a, int b, int c)
         {
             int match = 0;
@@ -194,7 +219,35 @@ namespace FunctionTestModule03
             else
                 return false;
         }
-
+        public void bai9(float a, float b, float x)
+        {
+            if (a > b)
+                throw new Exception("Error");
+            else if (x < a)
+            {
+                Console.WriteLine(a);
+            }
+            else if (x > b)
+            {
+                Console.WriteLine(b);
+            }
+            else
+            {
+                Console.Write(x);
+            }
+        }
+        public bool bai10(float a, float b, float c)
+        {
+            if (a <= 0 || b <= 0 || c <= 0)
+                return true;
+            else if (a + b < c)
+                return false;
+            else if (a + c < b)
+                return false;
+            else if (b + c < a)
+                return false;
+            else return true;
+        }
         public bool PasswordCheck(string pass)
         {
             if (pass.Length >= 6)
